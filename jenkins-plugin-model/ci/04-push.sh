@@ -1,5 +1,5 @@
 #!/bin/bash
-docker image build -t ibmug/Aprende_Jenkins:$1 -f jenkins-plugin-model/src/demo2-publish/dockerfile .
+docker image build -t ibmug/project_publish:$1 -f jenkins-plugin-model/src/demo2-publish/dockerfile .
 
 if [ -z ${DOCKER_HUB_USER+x} ]
 then 
@@ -8,4 +8,4 @@ else
     docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
 fi
 
-docker push ibmug/Aprende_Jenkins:$1
+docker push ibmug/project_publish:$1
